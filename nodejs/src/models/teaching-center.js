@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Teaching_Center.init(
     {
+      name: DataTypes.STRING,
       address: DataTypes.STRING,
       description: DataTypes.TEXT,
       image: DataTypes.STRING,
