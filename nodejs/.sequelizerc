@@ -1,0 +1,8 @@
+var path = require('path');
+
+module.exports = {
+  config: path.resolve('./src/config', 'config.json'), //noi cho sequelize cli biet lam sao ket noi DB
+  'migrations-path': path.resolve('./src', 'migrations'), //Tao bang trong DB (CREATE...)
+  'models-path': path.resolve('./src', 'models'),
+  'seeders-path': path.resolve('./src', 'seeders'), //Tao du lieu cho cell or record
+};
