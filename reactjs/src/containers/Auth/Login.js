@@ -5,7 +5,7 @@ import * as actions from '../../store/actions';
 
 import './Login.scss';
 import { FormattedMessage } from 'react-intl';
-// import { handleLoginApi } from '../../services/userService.js';
+import { handleLoginApi } from '../../services/userService.js';
 
 class Login extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Login extends Component {
       username: '',
       password: '',
       isShowPassword: false,
-      //   errMessage: '',
+      errMessage: '',
     };
   }
 
@@ -30,31 +30,32 @@ class Login extends Component {
     });
   };
 
-  //   handleLogin = async () => {
-  //     this.setState({
-  //       errMessage: '',
-  //     });
-  //     try {
-  //       let data = await handleLoginApi(this.state.username, this.state.password);
-  //       if (data && data.errCode !== 0) {
-  //         this.setState({
-  //           errMessage: data.message,
-  //         });
-  //       }
-  //       if (data && data.errCode === 0) {
-  //         this.props.userLoginSuccess(data.user);
-  //         console.log('login success!');
-  //       }
-  //     } catch (error) {
-  //       if (error.response) {
-  //         if (error.response.data) {
-  //           this.setState({
-  //             errMessage: error.response.data.message,
-  //           });
-  //         }
-  //       }
-  //     }
-  //   };
+  handleLogin = async () => {
+    this.setState({
+      errMessage: '',
+    });
+    try {
+      let data = await handleLoginApi(this.state.username, this.state.password);
+      if (data && data.errCode !== 0) {
+        this.setState({
+          errMessage: data.message,
+        });
+      }
+      console.log('check data', data);
+      if (data && data.errCode === 0) {
+        this.props.userLoginSuccess(data.user);
+        console.log('login success!');
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.data) {
+          this.setState({
+            errMessage: error.response.data.message,
+          });
+        }
+      }
+    }
+  };
 
   handleShowHidePassword = () => {
     this.setState({
@@ -62,11 +63,11 @@ class Login extends Component {
     });
   };
 
-  //   handleKeyDown = (event) => {
-  //     if (event.key === 'Enter' || event.keyCode === 13) {
-  //       this.handleLogin();
-  //     }
-  //   };
+  handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+      this.handleLogin();
+    }
+  };
 
   render() {
     return (
@@ -92,7 +93,7 @@ class Login extends Component {
                   className="form-control"
                   placeholder="Enter your password"
                   onChange={(event) => this.handleOnChangePassword(event)}
-                  //   onKeyDown={(event) => this.handleKeyDown(event)}
+                  onKeyDown={(event) => this.handleKeyDown(event)}
                 />
                 <span
                   onClick={() => {
@@ -104,14 +105,14 @@ class Login extends Component {
               </div>
             </div>
             <div className="col-12" style={{ color: 'red' }}>
-              {/* {this.state.errMessage} */}
+              {this.state.errMessage}
             </div>
             <div className="col-12">
               <button
                 className="btn-login"
-                // onClick={() => {
-                //   this.handleLogin();
-                // }}
+                onClick={() => {
+                  this.handleLogin();
+                }}
               >
                 Login
               </button>
@@ -142,8 +143,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     navigate: (path) => dispatch(push(path)),
-    // userLoginFail: () => dispatch(actions.adminLoginFail()),
-    // userLoginSuccess: (userInfor) => dispatch(actions.userLoginSuccess(userInfor)),
+    userLoginFail: () => dispatch(actions.userLoginFail()),
+    userLoginSuccess: (userInfor) => dispatch(actions.userLoginSuccess(userInfor)),
   };
 };
 
