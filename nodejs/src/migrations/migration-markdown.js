@@ -1,30 +1,36 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('bookings', {
+    await queryInterface.createTable('markdowns', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      statusId: {
-        type: Sequelize.STRING,
+      contentHTML: {
+        allowNull: false,
+        type: Sequelize.TEXT('long'),
+      },
+      contentMarkdown: {
+        allowNull: false,
+        type: Sequelize.TEXT('long'),
+      },
+      description: {
+        allowNull: true,
+        type: Sequelize.TEXT('long'),
       },
       teacherId: {
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
-      studentId: {
+      specialtyId: {
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
-      date: {
-        type: Sequelize.STRING,
-      },
-      timeType: {
-        type: Sequelize.STRING,
-      },
-      token: {
-        type: Sequelize.STRING,
+      teachingCenterId: {
+        allowNull: true,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +43,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('bookings');
+    await queryInterface.dropTable('markdowns');
   },
 };

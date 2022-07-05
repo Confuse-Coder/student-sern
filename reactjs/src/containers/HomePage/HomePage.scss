@@ -45,7 +45,7 @@
     background: #f5f5f5;
   }
 
-  &.section-outstanding-doctor {
+  &.section-outstanding-teacher {
     background: #f5f5f5;
   }
 
@@ -69,11 +69,11 @@
           // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
         }
 
-        &.section-medical-facility {
+        &.section-teaching-center {
           // background-image: url('../../assets/medical-facility/benh-vien-thu-cuc-1.jpg');
         }
 
-        &.section-outstanding-doctor {
+        &.section-outstanding-teacher {
           // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
           height: 120px;
           width: 120px;
@@ -125,7 +125,7 @@
     }
   }
 }
-.section-outstanding-doctor {
+.section-outstanding-teacher {
   .outer-bg {
     display: flex;
     justify-content: center;

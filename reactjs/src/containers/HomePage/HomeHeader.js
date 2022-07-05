@@ -85,20 +85,18 @@ class HomeHeader extends Component {
         {this.props.isShowBanner === true && (
           <div className="home-header-banner">
             <div className="container">
-              <div className="row">
-                <div className="content-left">
-                  <div className="title1">
-                    <FormattedMessage id="banner.title1" />
-                  </div>
-                  <div className="title2">
-                    <FormattedMessage id="banner.title2" />
-                  </div>
+              <div className="content-left">
+                <div className="title1">
+                  <FormattedMessage id="banner.title1" />
                 </div>
-                <div className="content-right">
-                  <button className="btn btn-primary">
-                    <FormattedMessage id="banner.enroll-button" />
-                  </button>
+                <div className="title2">
+                  <FormattedMessage id="banner.title2" />
                 </div>
+              </div>
+              <div className="content-right">
+                <button className="btn btn-primary">
+                  <FormattedMessage id="banner.enroll-button" />
+                </button>
               </div>
             </div>
           </div>

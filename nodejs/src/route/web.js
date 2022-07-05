@@ -1,6 +1,7 @@
 import express from 'express';
 import homeController from '../controllers/homeController';
 import userController from '../controllers/userController';
+import teacherController from '../controllers/teacherController';
 
 let router = express.Router();
 
@@ -22,6 +23,12 @@ let initWebRoutes = (app) => {
   router.post('/api/create-new-user', userController.handleCreateNewUser);
   router.put('/api/edit-user', userController.handleEditUser);
   router.delete('/api/delete-user', userController.handleDeleteUser);
+  router.get('/api/allcode', userController.getAllCode);
+
+  router.get('/api/top-teacher-home', teacherController.getTopTeacherHome);
+  router.get('/api/get-all-doctors', teacherController.getAllDoctors);
+  router.post('/api/save-infor-doctors', teacherController.postInforDoctor);
+  router.get('/api/get-detail-doctor-by-id', teacherController.getDetailDoctorById);
 
   return app.use('/', router);
 };

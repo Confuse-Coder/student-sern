@@ -150,6 +150,11 @@ let createNewUser = (data) => {
           firstName: data.firstName,
           lastName: data.lastName,
           address: data.address,
+          phonenumber: data.phonenumber,
+          gender: data.gender,
+          roleId: data.roleId,
+          positionId: data.positionId,
+          image: data.avatar,
         });
 
         resolve({
@@ -200,13 +205,16 @@ let updateUserData = (data) => {
         raw: false,
       });
       if (user) {
-        user.id = data.id;
         user.firstName = data.firstName;
         user.lastName = data.lastName;
         user.address = data.address;
+        user.roleId = data.roleId;
+        user.positionId = data.positionId;
+        user.gender = data.gender;
+        user.phonenumber = data.phonenumber;
         if (data.avatar) {
+          user.image = data.avatar;
         }
-        // user.image = data.avatar;
         await user.save();
 
         resolve({
@@ -225,6 +233,29 @@ let updateUserData = (data) => {
   });
 };
 
+let getAllCodeService = (typeInput) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!typeInput) {
+        resolve({
+          errCode: 1,
+          errMessage: 'Missing required parameter!',
+        });
+      } else {
+        let res = {};
+        let allcode = await db.Allcode.findAll({
+          where: { type: typeInput },
+        });
+        res.errCode = 0;
+        res.data = allcode;
+        resolve(res);
+      }
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   handleUserLogin,
   getUserWithPagination,
@@ -232,4 +263,5 @@ module.exports = {
   deleteUser,
   updateUserData,
   getAllUsers,
+  getAllCodeService,
 };

@@ -18,20 +18,20 @@
     "menu": {
         "admin": {
             "manage-user": "Manage System",
-            "manage-doctor": "Manage Doctors",
+            "manage-teacher": "Manage Teachers",
             "manage-admin": "Manage Admin",
             "crud": "CRUD User",
             "crud-redux": "CRUD Redux",
-            "clinic": "Clinics",
-            "manage-clinic": "Manage Clinics",
+            "teaching-center": "Teaching Center",
+            "manage-teaching-center": "Manage Teaching Center",
             "specialty": "Specialties",
             "manage-specialty": "Manage Specialties",
             "handbook": "Handbook",
             "manage-handbook": "Manage Handbook"
         },
-        "doctor": {
-            "manage-schedule": "Manage Doctor's Schedule",
-            "manage-patient": "Manage Doctor's Patient"
+        "teacher": {
+            "manage-schedule": "Manage Teacher's Schedule",
+            "manage-student": "Manage Student"
         }
     },
     "manage-user": {
@@ -47,27 +47,28 @@
         "roleid": "Role",
         "image": "Avatar",
         "save": "Save User",
-        "edit": "Edit User"
+        "edit": "Edit User",
+        "upload": "Upload"
     },
     "homepage": {
-        "out-standing-doctor": "Last week's featured Doctor",
+        "out-standing-teacher": "Last week's featured Teacher",
         "more-infor": "More Information",
         "specialty-popular": "Popular Specialties"
     },
     "manage-schedule": {
-        "title": "Manage doctor's examination plan",
-        "choose-doctor": "Choose Doctor",
+        "title": "Manage teacher's examination plan",
+        "choose-teacher": "Choose Teacher",
         "choose-date": "Choose date",
         "save": "Save"
     },
     "patient": {
-        "detail-doctor": {
+        "detail-teacher": {
             "schedule": "Schedule",
             "non-schedule": "No appointment available during this time, Please choose another time!",
             "choose": "Choose",
             "book-free": "and book (free)"
         },
-        "extra-infor-doctor": {
+        "extra-infor-teacher": {
             "text-address": "Address of examination",
             "price": "Examination price",
             "detail": "See details",
@@ -90,9 +91,9 @@
         }
     },
     "admin": {
-        "manage-doctor": {
-            "title": "Create Doctor's Information",
-            "select-doctor": "Select doctor",
+        "manage-teacher": {
+            "title": "Create Teacher's Information",
+            "select-teacher": "Select teacher",
             "intro": "Introduction",
             "add": "Create",
             "save": "Save",
@@ -103,7 +104,7 @@
             "addressClinic": "Clinic's Address",
             "note": "Note",
             "specialty": "Choose specialty",
-            "select-clinic": "Choose clinic"
+            "select-teaching-center": "Choose Teaching Center"
         }
     }
 }

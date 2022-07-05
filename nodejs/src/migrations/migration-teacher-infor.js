@@ -1,48 +1,50 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('teacher_infor', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      email: {
-        type: Sequelize.STRING,
-      },
-      password: {
-        type: Sequelize.STRING,
-      },
-      firstName: {
-        type: Sequelize.STRING,
-      },
-      lastName: {
-        type: Sequelize.STRING,
-      },
-      address: {
+      teacherId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
+      },
+      specialtyId: {
+        type: Sequelize.INTEGER,
+      },
+      teachingCenterId: {
+        type: Sequelize.INTEGER,
+      },
+      priceId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      provinceId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      paymentId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      addressTeachingCenter: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      nameTeachingCenter: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      note: {
         type: Sequelize.STRING,
       },
-      gender: {
+      count: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        type: Sequelize.STRING,
-      },
-      roleId: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      phonenumber: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      positionId: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      image: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        defaultValue: 0,
       },
       createdAt: {
         allowNull: false,
@@ -55,6 +57,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('teacher_infor');
   },
 };
