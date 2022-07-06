@@ -7,8 +7,10 @@ import {
   deleteUserService,
   editUserService,
   getTopTeacherHomeService,
-  getAllDoctors,
-  saveDetailDoctorService,
+  getAllTeachers,
+  saveDetailTeacherService,
+  getAllSpecialty,
+  getAllTeachingCenter,
 } from '../../services/userService';
 import { toast } from 'react-toastify';
 
@@ -17,6 +19,7 @@ export const fetchGenderStart = () => {
     try {
       dispatch({ type: actionTypes.FETCH_GENDER_START });
       let res = await getAllCodeService('GENDER');
+      console.log('check res gender', res);
       if (res && res.errCode === 0) {
         dispatch(fetchGenderSuccess(res.data));
       } else {
@@ -24,7 +27,7 @@ export const fetchGenderStart = () => {
       }
     } catch (e) {
       dispatch(fetchGenderFailed());
-      console.log('fetchGend erStart error', e);
+      console.log('fetchGenderStart error', e);
     }
   };
 };
@@ -220,52 +223,126 @@ export const fetchTopTeacher = () => {
   };
 };
 
-export const fetchAllDoctors = () => {
+export const fetchAllTeachers = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllDoctors();
+      let res = await getAllTeachers();
       if (res && res.errCode === 0) {
         dispatch({
-          type: actionTypes.FETCH_ALL_DOCTORS_SUCCESS,
+          type: actionTypes.FETCH_ALL_TEACHERS_SUCCESS,
           dataDr: res.data,
         });
       } else {
         dispatch({
-          type: actionTypes.FETCH_ALL_DOCTORS_FAILED,
+          type: actionTypes.FETCH_ALL_TEACHERS_FAILED,
         });
       }
     } catch (e) {
-      console.log('FETCH_ALL_DOCTORS_FAILED: ', e);
+      console.log('FETCH_ALL_TEACHERS_FAILED: ', e);
       dispatch({
-        type: actionTypes.FETCH_ALL_DOCTORS_FAILED,
+        type: actionTypes.FETCH_ALL_TEACHERS_FAILED,
       });
     }
   };
 };
 
-export const saveDetailDoctor = (data) => {
+export const saveDetailTeacher = (data) => {
   return async (dispatch, getState) => {
     try {
-      let res = await saveDetailDoctorService(data);
+      let res = await saveDetailTeacherService(data);
       if (res && res.errCode === 0) {
-        toast.success('Save detail infor Doctor succeed!');
+        toast.success('Save detail infor Teacher succeed!');
 
         dispatch({
-          type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
+          type: actionTypes.SAVE_DETAIL_TEACHER_SUCCESS,
         });
       } else {
-        toast.error('Save detail infor Doctor failed!');
+        toast.error('Save detail infor Teacher failed!');
 
         dispatch({
-          type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
+          type: actionTypes.SAVE_DETAIL_TEACHER_FAILED,
         });
       }
     } catch (e) {
-      toast.error('Save detail infor Doctor failed!');
+      toast.error('Save detail infor Teacher failed!');
 
-      console.log('SAVE_DETAIL_DOCTOR_FAILED: ', e);
+      console.log('SAVE_DETAIL_TEACHER_FAILED: ', e);
       dispatch({
-        type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
+        type: actionTypes.SAVE_DETAIL_TEACHER_FAILED,
+      });
+    }
+  };
+};
+
+export const getRequiredTeacherInfor = () => {
+  return async (dispatch, getState) => {
+    try {
+      dispatch({ type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_START });
+
+      let resPrice = await getAllCodeService('PRICE');
+      let resPayment = await getAllCodeService('PAYMENT');
+      let resProvince = await getAllCodeService('PROVINCE');
+      let resSpecialty = await getAllSpecialty();
+      let resTeachingCenter = await getAllTeachingCenter();
+
+      if (
+        resPrice &&
+        resPrice.errCode === 0 &&
+        resPayment &&
+        resPayment.errCode === 0 &&
+        resProvince &&
+        resProvince.errCode === 0 &&
+        resSpecialty &&
+        resSpecialty.errCode === 0 &&
+        resTeachingCenter &&
+        resTeachingCenter.errCode === 0
+      ) {
+        let data = {
+          resPrice: resPrice.data,
+          resPayment: resPayment.data,
+          resProvince: resProvince.data,
+          resSpecialty: resSpecialty.data,
+          resTeachingCenter: resTeachingCenter.data,
+        };
+        dispatch(fetchRequiredTeacherInforSuccess(data));
+      } else {
+        dispatch(fetchRequiredTeacherInforFailed());
+      }
+    } catch (e) {
+      dispatch(fetchRequiredTeacherInforFailed());
+      console.log('fetchGenderStart error', e);
+    }
+  };
+};
+
+export const fetchRequiredTeacherInforSuccess = (allRequiredData) => ({
+  type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_SUCCESS,
+  data: allRequiredData,
+});
+
+export const fetchRequiredTeacherInforFailed = () => ({
+  type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_FAILED,
+});
+
+export const fetchAllScheduleTime = (type) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllCodeService('TIME');
+
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+          dataTime: res.data,
+        });
+      } else {
+        dispatch({
+          type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+        });
+      }
+    } catch (e) {
+      console.log('FETCH_ALLCODE_SCHEDULE_TIME_FAILED: ', e);
+      dispatch({
+        type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
       });
     }
   };

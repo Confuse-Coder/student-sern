@@ -61,7 +61,7 @@
         "choose-date": "Choose date",
         "save": "Save"
     },
-    "patient": {
+    "student": {
         "detail-teacher": {
             "schedule": "Schedule",
             "non-schedule": "No appointment available during this time, Please choose another time!",
@@ -72,7 +72,7 @@
             "text-address": "Address of examination",
             "price": "Examination price",
             "detail": "See details",
-            "payment": "The patients can pay the cost in the form of: ",
+            "payment": "The students can pay the cost in the form of: ",
             "hide-price": "Hide price list"
         },
         "booking-modal": {
@@ -100,11 +100,11 @@
             "price": "Price",
             "payment": "Payment",
             "province": "Province",
-            "nameClinic": "Clinic's Name",
-            "addressClinic": "Clinic's Address",
+            "nameTeachingCenter": "TeachingCenter's Name",
+            "addressTeachingCenter": "TeachingCenter's Address",
             "note": "Note",
             "specialty": "Choose specialty",
-            "select-teaching-center": "Choose Teaching Center"
+            "select-teachingCenter": "Choose Teaching Center"
         }
     }
 }

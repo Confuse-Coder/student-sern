@@ -31,7 +31,7 @@
         },
         "teacher": {
             "manage-schedule": "Quản lý kế hoạch dạy học",
-            "manage-patient": "Quản lý sinh viên"
+            "manage-student": "Quản lý sinh viên"
         }
     },
     "manage-user": {
@@ -56,12 +56,12 @@
         "specialty-popular": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
-        "title": "Quản lý kế hoạch khám bệnh của giảng viên",
+        "title": "Quản lý kế hoạch giảng dạy của giảng viên",
         "choose-teacher": "Chọn giảng viên",
         "choose-date": "Chọn ngày",
         "save": "Lưu thông tin"
     },
-    "patient": {
+    "student": {
         "detail-teacher": {
             "schedule": "Lịch khám",
             "non-schedule": "Không có lịch hẹn trong thời gian này, Vui lòng chọn thời gian khác!",
@@ -100,11 +100,11 @@
             "price": "Giá khám bệnh",
             "payment": "Phương thức thanh toán",
             "province": "Tỉnh thành",
-            "nameClinic": "Tên phòng khám",
-            "addressClinic": "Địa chỉ phòng khám",
+            "nameTeachingCenter": "Tên phòng khám",
+            "addressTeachingCenter": "Địa chỉ phòng khám",
             "note": "Ghi chú",
             "specialty": "Chọn chuyên ngành",
-            "select-teaching-center": "Chọn trung tâm giảng dạy"
+            "select-teachingCenter": "Chọn trung tâm giảng dạy"
         }
     }
 }

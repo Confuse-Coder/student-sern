@@ -14,24 +14,16 @@ export const adminMenu = [
       {
         name: 'menu.admin.manage-teacher',
         link: '/system/manage-teacher',
-        // subMenus: [
-        //   { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-        //   { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
-        // ],
       },
       {
-        name: 'menu.admin.manage-admin',
-        link: '/system/user-admin',
-      },
-      {
-        //quản lý kế hoạch giảng dạy của giảng viên
+        //quản lý kế hoạch dạy học của giảng viên
         name: 'menu.teacher.manage-schedule',
         link: '/teacher/manage-schedule',
       },
     ],
   },
   {
-    //quản lý phòng khám
+    //quản lý trung tâm
     name: 'menu.admin.teaching-center',
     menus: [
       {
@@ -41,12 +33,32 @@ export const adminMenu = [
     ],
   },
   {
-    //quản lý chuyên khoa
+    //quản lý chuyên ngành
     name: 'menu.admin.specialty',
     menus: [
       {
         name: 'menu.admin.manage-specialty',
         link: '/system/manage-specialty',
+      },
+    ],
+  },
+];
+
+export const teacherMenu = [
+  {
+    name: 'menu.admin.manage-user',
+    menus: [
+      {
+        //quản lý kế hoạch dạy học của giảng viên
+
+        name: 'menu.teacher.manage-schedule',
+        link: '/teacher/manage-schedule',
+      },
+      {
+        //quản lý lịch học của giảng viên
+
+        name: 'menu.teacher.manage-student',
+        link: '/teacher/manage-student',
       },
     ],
   },

@@ -15,10 +15,10 @@ let getTopTeacherHome = async (req, res) => {
   }
 };
 
-let getAllDoctors = async (req, res) => {
+let getAllTeachers = async (req, res) => {
   try {
-    let doctors = await teacherService.getAllDoctors();
-    return res.status(200).json(doctors);
+    let teachers = await teacherService.getAllTeachers();
+    return res.status(200).json(teachers);
   } catch (e) {
     console.log('e');
     return res.status(200).json({
@@ -28,9 +28,9 @@ let getAllDoctors = async (req, res) => {
   }
 };
 
-let postInforDoctor = async (req, res) => {
+let postInforTeacher = async (req, res) => {
   try {
-    let response = await teacherService.saveDetailInforDoctor(req.body);
+    let response = await teacherService.saveDetailInforTeacher(req.body);
     return res.status(200).json(response);
   } catch (e) {
     console.log(e);
@@ -41,9 +41,87 @@ let postInforDoctor = async (req, res) => {
   }
 };
 
-let getDetailDoctorById = async (req, res) => {
+let getDetailTeacherById = async (req, res) => {
   try {
-    let infor = await doctorService.getDetailDoctorById(req.query.id);
+    let infor = await teacherService.getDetailTeacherById(req.query.id);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let bulkCreateSchedule = async (req, res) => {
+  try {
+    let infor = await teacherService.bulkCreateSchedule(req.body);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let getScheduleByDate = async (req, res) => {
+  try {
+    let infor = await teacherService.getScheduleByDate(req.query.teacherId, req.query.date);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let getExtraTeacherById = async (req, res) => {
+  try {
+    let infor = await teacherService.getExtraTeacherById(req.query.teacherId);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let getProfileTeacherById = async (req, res) => {
+  try {
+    let infor = await teacherService.getProfileTeacherById(req.query.teacherId);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let getListStudentForTeacher = async (req, res) => {
+  try {
+    let infor = await teacherService.getListStudentForTeacher(req.query.teacherId, req.query.date);
+    return res.status(200).json(infor);
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: 'Error from the server!',
+    });
+  }
+};
+
+let sendRemedy = async (req, res) => {
+  try {
+    let infor = await teacherService.sendRemedy(req.body);
     return res.status(200).json(infor);
   } catch (e) {
     console.log(e);
@@ -56,7 +134,13 @@ let getDetailDoctorById = async (req, res) => {
 
 module.exports = {
   getTopTeacherHome,
-  getAllDoctors,
-  postInforDoctor,
-  getDetailDoctorById,
+  getAllTeachers,
+  postInforTeacher,
+  getDetailTeacherById,
+  bulkCreateSchedule,
+  getScheduleByDate,
+  getExtraTeacherById,
+  getProfileTeacherById,
+  getListStudentForTeacher,
+  sendRemedy,
 };
