@@ -74,11 +74,16 @@ class ManageTeachingCenter extends Component {
   render() {
     return (
       <div className="manage-specialty-container">
-        <div className="ms-title">Quản lý phòng khám</div>
+        <div className="ms-title">
+          <FormattedMessage id="teaching-center.manage-teaching-center.title" />
+        </div>
 
         <div className="add-new-specialty row">
           <div className="col-6 form-group">
-            <label>Tên phòng khám</label>
+            <label>
+              {' '}
+              <FormattedMessage id="teaching-center.manage-teaching-center.name-center" />
+            </label>
             <input
               className="form-control"
               type="text"
@@ -87,7 +92,9 @@ class ManageTeachingCenter extends Component {
             />
           </div>
           <div className="col-6 form-group">
-            <label>Ảnh phòng khám</label>
+            <label>
+              <FormattedMessage id="teaching-center.manage-teaching-center.img-center" />
+            </label>
             <input
               className="form-control-file"
               type="file"
@@ -95,7 +102,9 @@ class ManageTeachingCenter extends Component {
             />
           </div>
           <div className="col-6 form-group">
-            <label>Địa chỉ phòng khám</label>
+            <label>
+              <FormattedMessage id="teaching-center.manage-teaching-center.address-center" />
+            </label>
             <input
               className="form-control"
               type="text"
@@ -117,7 +126,7 @@ class ManageTeachingCenter extends Component {
               className="btn-save-specialty"
               onClick={() => this.handleSaveNewTeachingCenter()}
             >
-              Save
+              <FormattedMessage id="teaching-center.manage-teaching-center.save" />
             </button>
           </div>
         </div>

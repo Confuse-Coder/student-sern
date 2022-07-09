@@ -92,7 +92,7 @@ class ManageTeacher extends Component {
           result.push(object);
         });
       }
-      if (type === 'CLINIC') {
+      if (type === 'TEACHING_CENTER') {
         inputData.map((item, index) => {
           let object = {};
           object.label = item.name;
@@ -120,7 +120,10 @@ class ManageTeacher extends Component {
       let dataSelectPayment = this.buildDataInputSelect(resPayment, 'PAYMENT');
       let dataSelectProvince = this.buildDataInputSelect(resProvince, 'PROVINCE');
       let dataSelectresSpecialty = this.buildDataInputSelect(resSpecialty, 'SPECIALTY');
-      let dataSelectresTeachingCenter = this.buildDataInputSelect(resTeachingCenter, 'CLINIC');
+      let dataSelectresTeachingCenter = this.buildDataInputSelect(
+        resTeachingCenter,
+        'TEACHING_CENTER'
+      );
 
       this.setState({
         listPrice: dataSelectPrice,

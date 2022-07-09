@@ -1,0 +1,164 @@
+.section-about {
+  .section-about-banner {
+    .banner-img {
+      background-image: url('../../../assets/images/home page/about-us.png');
+      height: 485px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .banner-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        font-weight: 800;
+      }
+    }
+  }
+
+  .section-about-content {
+    .content-left {
+    }
+
+    .content-right {
+    }
+  }
+}
+
+.company-news {
+  width: auto;
+  height: 70px;
+  background-color: #007bff;
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .news-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: white;
+      font-size: 24px;
+      p {
+        font-weight: 300;
+        span {
+          font-weight: 700;
+        }
+
+        i {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.testimonial {
+  &__title {
+    padding: 5rem 11rem 0rem;
+
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+
+  &__btn {
+    outline: none;
+    border: none;
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 900;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__content {
+    .quotes-sign {
+      i {
+        margin-right: 10px;
+        font-size: 24px;
+        color: #007bff;
+      }
+    }
+
+    .quotes-content {
+      p {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__author {
+    line-height: 32px;
+    &_name {
+      font-weight: 700;
+    }
+
+    &_position {
+    }
+
+    &_link {
+      a {
+        font-weight: 900;
+        font-size: 18px;
+
+        i {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.brands {
+  background-color: #f7f9fa;
+
+  .brand-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.reach {
+  background-color: #007bff;
+  &__title {
+    font-size: 4rem;
+    color: white;
+    font-weight: 700;
+    padding-top: 4rem;
+  }
+
+  &__sub-title {
+    font-size: 1.9rem;
+    color: white;
+  }
+
+  &__specifition {
+    color: white;
+    line-height: 30px;
+
+    .number {
+      font-size: 40px;
+      font-weight: 700;
+    }
+    .text {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}

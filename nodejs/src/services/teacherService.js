@@ -433,7 +433,7 @@ let getListStudentForTeacher = (teacherId, date) => {
   });
 };
 
-let sendRemedy = (data) => {
+let sendConfirmSchedule = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
       if (!data.email || !data.teacherId || !data.studentId || !data.timeType || !data.imgBase64) {
@@ -458,7 +458,7 @@ let sendRemedy = (data) => {
           await appointment.save();
         }
 
-        //send email remedy
+        //send email Confirm Schedule
         await emailService.sendAttachment(data);
         resolve({
           errCode: 0,
@@ -481,5 +481,5 @@ module.exports = {
   getExtraTeacherById,
   getProfileTeacherById,
   getListStudentForTeacher,
-  sendRemedy,
+  sendConfirmSchedule,
 };

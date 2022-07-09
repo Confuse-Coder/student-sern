@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import './ManageStudent.scss';
 import DatePicker from '../../../components/Input/DatePicker';
-import { getAllStudentForTeacher, postSendRemedy } from '../../../services/userService';
+import { getAllStudentForTeacher, postSendConfirmSchedule } from '../../../services/userService';
 import moment from 'moment';
 import { LANGUAGES } from '../../../utils';
-import RemedyModal from './RemedyModal';
+import ConfirmScheduleModal from './ConfirmScheduleModal';
 import { toast } from 'react-toastify';
 import LoadingOverlay from 'react-loading-overlay';
 
@@ -16,7 +16,7 @@ class ManageStudent extends Component {
     this.state = {
       currentDate: moment(new Date()).startOf('day').valueOf(),
       dataStudent: [],
-      isOpenRemedyModal: false,
+      isOpenConfirmScheduleModal: false,
       dataModal: {},
       isShowLoading: false,
     };
@@ -67,24 +67,24 @@ class ManageStudent extends Component {
       studentName: item.studentData.firstName,
     };
     this.setState({
-      isOpenRemedyModal: true,
+      isOpenConfirmScheduleModal: true,
       dataModal: data,
     });
   };
 
-  closeRemedyModal = () => {
+  closeConfirmScheduleModal = () => {
     this.setState({
-      isOpenRemedyModal: false,
+      isOpenConfirmScheduleModal: false,
       dataModal: {},
     });
   };
 
-  sendRemedy = async (dataChild) => {
+  sendConfirmSchedule = async (dataChild) => {
     let { dataModal } = this.state;
     this.setState({
       isShowLoading: true,
     });
-    let res = await postSendRemedy({
+    let res = await postSendConfirmSchedule({
       email: dataChild.email,
       imgBase64: dataChild.imgBase64,
       teacherId: dataModal.teacherId,
@@ -98,28 +98,32 @@ class ManageStudent extends Component {
       this.setState({
         isShowLoading: false,
       });
-      toast.success('Send remedy succeed!');
-      this.closeRemedyModal();
+      toast.success('Send Confirm Schedule succeed!');
+      this.closeConfirmScheduleModal();
       await this.getDataStudent();
     } else {
       this.setState({
         isShowLoading: false,
       });
-      toast.error('Send remedy failed!');
+      toast.error('Send Confirm Schedule failed!');
     }
   };
 
   render() {
-    let { dataStudent, isOpenRemedyModal, dataModal } = this.state;
+    let { dataStudent, isOpenConfirmScheduleModal, dataModal } = this.state;
     let { language } = this.props;
     return (
       <>
         <LoadingOverlay active={this.state.isShowLoading} spinner text="Loading...">
           <div className="manage-student-container">
-            <div className="m-p-title">Quản lý bệnh nhân khám bệnh</div>
+            <div className="m-p-title">
+              <FormattedMessage id="manage-student.title" />
+            </div>
             <div className="manage-student-body row">
               <div className="col-4 form-group">
-                <label>Chọn lịch khám</label>
+                <label>
+                  <FormattedMessage id="manage-student.choose-schedule" />
+                </label>
                 <DatePicker
                   onChange={this.handeleOnChangeDatePicker}
                   className="form-control"
@@ -130,12 +134,24 @@ class ManageStudent extends Component {
                 <table style={{ width: '100%' }}>
                   <tbody>
                     <tr>
-                      <th>STT</th>
-                      <th>Thời gian</th>
-                      <th>Họ và tên</th>
-                      <th>Địa chỉ</th>
-                      <th>Giới tính</th>
-                      <th>Actions</th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-1" />
+                      </th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-2" />
+                      </th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-3" />
+                      </th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-4" />
+                      </th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-5" />
+                      </th>
+                      <th>
+                        <FormattedMessage id="manage-student.table.col-6" />
+                      </th>
                     </tr>
                     {dataStudent && dataStudent.length > 0 ? (
                       dataStudent.map((item, index) => {
@@ -159,7 +175,7 @@ class ManageStudent extends Component {
                                 className="mp-btn-confirm"
                                 onClick={() => this.handleBtnConfirm(item)}
                               >
-                                Xác nhận
+                                <FormattedMessage id="manage-student.confirm" />
                               </button>
                             </td>
                           </tr>
@@ -168,7 +184,7 @@ class ManageStudent extends Component {
                     ) : (
                       <tr>
                         <td colSpan={6} style={{ textAlign: 'center' }}>
-                          No Data
+                          <FormattedMessage id="manage-student.data" />
                         </td>
                       </tr>
                     )}
@@ -177,11 +193,11 @@ class ManageStudent extends Component {
               </div>
             </div>
           </div>
-          <RemedyModal
-            isOpenModal={isOpenRemedyModal}
+          <ConfirmScheduleModal
+            isOpenModal={isOpenConfirmScheduleModal}
             dataModal={dataModal}
-            closeRemedyModal={this.closeRemedyModal}
-            sendRemedy={this.sendRemedy}
+            closeConfirmScheduleModal={this.closeConfirmScheduleModal}
+            sendConfirmSchedule={this.sendConfirmSchedule}
           />
         </LoadingOverlay>
       </>

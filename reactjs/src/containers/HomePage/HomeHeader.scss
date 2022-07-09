@@ -2,9 +2,7 @@
   height: 60px;
   width: 100%;
   padding: 0 40px;
-  // position: sticky;
   top: 0;
-  // background-color: transparent;
   z-index: 100;
 
   .home-header-content {
@@ -32,7 +30,7 @@
     }
 
     .center-content {
-      width: 55%;
+      width: 50%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -42,14 +40,26 @@
           font-weight: 400;
           font-size: 12px;
         }
+
+        &:hover {
+          cursor: pointer;
+          color: #007bff;
+        }
       }
     }
 
     .right-content {
-      width: 25%;
+      width: 30%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-evenly;
       align-items: center;
+
+      .child-content {
+        &:hover {
+          cursor: pointer;
+          color: #007bff;
+        }
+      }
 
       .support {
         padding-right: 50px;
@@ -96,7 +106,7 @@
 }
 
 .home-header-banner {
-  background-image: url('../../assets/main-banner/will-van-wingerden-dsvJgiBJTOs-unsplash.jpg');
+  background-image: url('../../assets/main-banner/bg-banner.jpg');
   height: 485px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,25 +120,20 @@
     .title1 {
       font-weight: 700;
       font-size: 34px;
-      text-shadow: 3px 3px 3px #333;
       color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .title2 {
-      font-weight: 400;
+      font-weight: 600;
       font-size: 16px;
-      text-shadow: 3px 3px 3px #333;
       color: white;
-    }
-  }
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  .content-right {
-    margin-top: 15px;
-    button {
-      padding-top: 0;
-      padding-bottom: 5px;
-      padding-left: 20px;
-      padding-right: 20px;
+      a {
+        text-decoration: underline;
+        text-shadow: none;
+      }
     }
   }
 }

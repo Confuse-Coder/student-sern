@@ -39,7 +39,7 @@ let initWebRoutes = (app) => {
   router.get('/api/get-extra_infor-teacher-by-id', teacherController.getExtraTeacherById);
   router.get('/api/get-profile-teacher-by-id', teacherController.getProfileTeacherById);
   router.get('/api/get-list-student-for-teacher', teacherController.getListStudentForTeacher);
-  router.post('/api/send-remedy', teacherController.sendRemedy);
+  router.post('/api/send-confirm-schedule', teacherController.sendConfirmSchedule);
   router.post('/api/student-book-appointment', studentController.postBookAppointment);
   router.post('/api/verify-book-appointment', studentController.postVerifyBookAppointment);
   router.post('/api/create-new-specialty', specialtyController.createSpecialty);

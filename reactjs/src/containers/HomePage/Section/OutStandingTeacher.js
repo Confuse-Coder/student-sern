@@ -6,6 +6,7 @@ import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
 import HomePage from '../HomePage';
 import { withRouter } from 'react-router';
+import './OutStandingTeacher.scss';
 
 class OutStandingTeacher extends Component {
   constructor(props) {
@@ -43,9 +44,6 @@ class OutStandingTeacher extends Component {
             <span className="title-section">
               <FormattedMessage id="homepage.out-standing-teacher" />
             </span>
-            <button className="btn-section">
-              <FormattedMessage id="homepage.more-infor" />
-            </button>
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
@@ -72,8 +70,10 @@ class OutStandingTeacher extends Component {
                           ></div>
                         </div>
                         <div className="position text-center">
-                          <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
-                          {/* <div>{item.Teacher_Infor.imageData.name}</div> */}
+                          <div className="name-teacher">
+                            {language === LANGUAGES.VI ? nameVi : nameEn}
+                          </div>
+                          <div className="specilty">{item.Teacher_Infor.imageData.name}</div>
                         </div>
                       </div>
                     </div>

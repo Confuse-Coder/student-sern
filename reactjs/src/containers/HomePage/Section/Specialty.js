@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import './Specialty.scss';
 import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-// import { getAllSpecialty } from '../../../services/userService';
-// import { withRouter } from 'react-router';
+import { getAllSpecialty } from '../../../services/userService';
+import { withRouter } from 'react-router';
 
 class Specialty extends Component {
   constructor(props) {
@@ -17,12 +15,12 @@ class Specialty extends Component {
   }
 
   async componentDidMount() {
-    // let res = await getAllSpecialty();
-    // if (res && res.errCode === 0) {
-    //   this.setState({
-    //     dataSpecialty: res.data ? res.data : [],
-    //   });
-    // }
+    let res = await getAllSpecialty();
+    if (res && res.errCode === 0) {
+      this.setState({
+        dataSpecialty: res.data ? res.data : [],
+      });
+    }
   }
 
   handleViewDetailSpecialty = (item) => {
@@ -40,9 +38,6 @@ class Specialty extends Component {
             <span className="title-section">
               <FormattedMessage id="homepage.specialty-popular" />
             </span>
-            <button className="btn-section">
-              <FormattedMessage id="homepage.more-infor" />
-            </button>
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
@@ -82,4 +77,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));

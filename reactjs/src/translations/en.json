@@ -11,9 +11,9 @@
         "welcome": "Welcome,"
     },
     "banner": {
-        "title1": "LEARN WITHOUT LIMITS",
-        "title2": "Be prepared for any specialty with over 5,000 courses and degrees from world-renowned academies and companies.",
-        "enroll-button": "Enroll Now"
+        "title1": "Slow and steady",
+        "title2": "Try learning just 5–10 minutes a day. ",
+        "title3": "Looking for your mentor"
     },
     "menu": {
         "admin": {
@@ -51,9 +51,10 @@
         "upload": "Upload"
     },
     "homepage": {
-        "out-standing-teacher": "Last week's featured Teacher",
+        "out-standing-teacher": "Outstanding Instructors",
         "more-infor": "More Information",
-        "specialty-popular": "Popular Specialties"
+        "specialty-popular": "Popular Specialties",
+        "out-standing-teaching-center": "Top Center"
     },
     "manage-schedule": {
         "title": "Manage teacher's examination plan",
@@ -69,19 +70,19 @@
             "book-free": "and book (free)"
         },
         "extra-infor-teacher": {
-            "text-address": "Address of examination",
-            "price": "Examination price",
+            "text-address": "Address of Center",
+            "price": "Price",
             "detail": "See details",
             "payment": "The students can pay the cost in the form of: ",
             "hide-price": "Hide price list"
         },
         "booking-modal": {
-            "title": "Information to book a medical appointment",
+            "title": "Information about course's schedule",
             "fullname": "Full Name",
             "phonenumber": "Phone Number",
             "email": "Email",
             "address": "Address",
-            "reason": "Reasons for medical examinations",
+            "reason": "Note",
             "bỉrthday": "Date of Birth",
             "gender": "Gender",
             "btnConfirm": "Confirm",
@@ -100,11 +101,142 @@
             "price": "Price",
             "payment": "Payment",
             "province": "Province",
-            "nameTeachingCenter": "TeachingCenter's Name",
-            "addressTeachingCenter": "TeachingCenter's Address",
+            "nameTeachingCenter": "Center's Name",
+            "addressTeachingCenter": "Center's Address",
             "note": "Note",
             "specialty": "Choose specialty",
-            "select-teachingCenter": "Choose Teaching Center"
+            "select-teachingCenter": "Choose Center"
         }
+    },
+    "teaching-center": {
+        "manage-teaching-center": {
+            "title": "Manage teaching center",
+            "name-center": "Name of Center",
+            "img-center": "Image of Center",
+            "address-center": "Address of Center",
+            "save": "Save"
+        }
+    },
+    "specialty": {
+        "manage-specialty": {
+            "title": "manage specialty",
+            "name-specialty": "Name of specialty",
+            "img-specialty": "Image of specialty",
+            "save": "Save"
+        }
+    },
+    "about": {
+        "banner-title": "We share knowledge with the world",
+        "company-new": {
+            "line-1": "Company News: ",
+            "line-2": "Akademy Rings the Opening Bell in Celebration of its IPO!"
+        },
+        "testimonial": {
+            "title": {
+                "content": "We help organizations of all types and sizes prepare for the path ahead — wherever it leads. Our curated collection of business and technical courses help companies,governments, and nonprofits go further by placing learning at the center of their strategies",
+                "button": "Learn more"
+            },
+            "content": {
+                "line-1": " Akademy fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.",
+                "line-2": " In total, it was a big success, I would get emails about what a fantastic resource it was.",
+                "line-3": "Akademy responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers."
+            },
+            "author": {
+                "one": {
+                    "name": "Varun Patil",
+                    "position": "Senior Manager of HR Development",
+                    "link": "Read the Synechron case study"
+                },
+                "second": {
+                    "name": "Alfred Helmerich",
+                    "position": "Executive Training Manager",
+                    "link": "Read the NTT DATA case study"
+                },
+                "third": {
+                    "name": "Luz Santillana Romero",
+                    "position": "Development and Engagement Director",
+                    "link": "Read the Indra case study"
+                }
+            },
+            "reach": {
+                "title": {
+                    "title": "We just keep growing",
+                    "sub-title": "Our global community and our course catalog get bigger every day. Check out our latest numbers as of December 2021."
+                },
+                "specifition": {
+                    "1": {
+                        "number": "52M+",
+                        "text": "Learners"
+                    },
+                    "2": {
+                        "number": "68K+",
+                        "text": "Instructors"
+                    },
+                    "3": {
+                        "number": "196K+",
+                        "text": "Courses"
+                    },
+                    "4": {
+                        "number": "712M+",
+                        "text": "Course enrollments"
+                    },
+                    "5": {
+                        "number": "75",
+                        "text": "Languages"
+                    },
+                    "6": {
+                        "number": "11,600+",
+                        "text": "Enterprise customers"
+                    }
+                }
+            }
+        }
+    },
+    "footer": {
+        "social": "Follow us",
+        "menu-col": {
+            "one": {
+                "1": "Akademy Business",
+                "2": "Teach on Akademy",
+                "3": "Get the app",
+                "4": "About us",
+                "5": "Investors"
+            },
+            "second": {
+                "1": "Careers",
+                "2": "Blog",
+                "3": "Help",
+                "4": "Affiliate",
+                "5": "Accessibility statement"
+            },
+            "third": {
+                "1": "Terms",
+                "2": "Privacy policy",
+                "3": "Sitemap",
+                "4": "Featured topics"
+            }
+        },
+        "language": "Change Languages"
+    },
+    "confirm": {
+        "title": "Confirmation of successful class schedule",
+        "email": "Email of Student",
+        "choose-file": "Select invoice file",
+        "send": "Send",
+        "cancel": "Cancel"
+    },
+    "manage-student": {
+        "title": "Teaching schedule management",
+        "choose-schedule": "Choose teaching schedule",
+        "table": {
+            "col-1": "Range",
+            "col-2": "Time",
+            "col-3": "Name",
+            "col-4": "Address",
+            "col-5": "Gender",
+            "col-6": "Actions"
+        },
+        "confirm": "Confirm",
+        "data": "No Data"
     }
 }

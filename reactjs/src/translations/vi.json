@@ -11,27 +11,25 @@
         "welcome": "Xin chào,"
     },
     "banner": {
-        "title1": "HỌC TẬP KHÔNG GIỚI HẠN",
-        "title2": "Hãy sẵn sàng với mọi lĩnh vực với hơn 5.000 khóa học và chuyên ngành từ các trung tâm và công ty nổi tiếng thế giới.",
-        "enroll-button": "Đăng Ký Ngay"
+        "title1": "Chậm mà chắc",
+        "title2": "Hãy thử học chỉ 5–10 phút mỗi ngày. ",
+        "title3": "Tìm kiếm người hướng dẫn"
     },
     "menu": {
         "admin": {
             "manage-user": "Người dùng",
-            "manage-teacher": "Quản lý giáo viên",
+            "manage-teacher": "Quản lý giảng viên",
             "manage-admin": "Quản lý admin",
             "crud": "CRUD user",
             "crud-redux": "CRUD Redux",
             "teaching-center": "Trung tâm giảng dạy",
             "manage-teaching-center": "Quản lý trung tâm giảng dạy",
             "specialty": "Chuyên ngành",
-            "manage-specialty": "Quản lý chuyên ngành",
-            "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lý cẩm nang"
+            "manage-specialty": "Quản lý chuyên ngành"
         },
         "teacher": {
-            "manage-schedule": "Quản lý kế hoạch dạy học",
-            "manage-student": "Quản lý sinh viên"
+            "manage-schedule": "Quản lý kế hoạch giảng dạy",
+            "manage-student": "Quản lý học sinh"
         }
     },
     "manage-user": {
@@ -51,9 +49,10 @@
         "upload": "Tải ảnh"
     },
     "homepage": {
-        "out-standing-teacher": "Giảng viên nổi bật tuần qua",
-        "more-infor": "Xem thêm",
-        "specialty-popular": "Chuyên khoa phổ biến"
+        "out-standing-teacher": "Giảng Viên Nổi Bật Tuần Qua",
+        "more-infor": "Xem Thêm",
+        "specialty-popular": "Khoá Học Phổ Biến",
+        "out-standing-teaching-center": "Xếp Hạng Trung Tâm"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch giảng dạy của giảng viên",
@@ -63,31 +62,31 @@
     },
     "student": {
         "detail-teacher": {
-            "schedule": "Lịch khám",
-            "non-schedule": "Không có lịch hẹn trong thời gian này, Vui lòng chọn thời gian khác!",
+            "schedule": "Lịch giảng dạy",
+            "non-schedule": "Không có lịch giảng trong thời gian này, Vui lòng chọn thời gian khác!",
             "choose": "Chọn",
             "book-free": "và đặt (miễn phí)"
         },
         "extra-infor-teacher": {
-            "text-address": "Địa chỉ khám",
-            "price": "Giá khám",
+            "text-address": "Địa chỉ trung tâm",
+            "price": "Học phí",
             "detail": "Xem chi tiết",
-            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức: ",
+            "payment": "Học sinh có thể thanh toán học phí bằng hình thức: ",
             "hide-price": "Ẩn bảng giá"
         },
         "booking-modal": {
-            "title": "Thông tin đặt lịch khám bệnh",
+            "title": "Thông tin về lịch học",
             "fullname": "Họ và tên",
             "phonenumber": "Số điện thoại",
             "email": "Địa chỉ Email",
             "address": "Địa chỉ liên hệ",
-            "reason": "Lý do khám bệnh",
+            "reason": "Ghi chú",
             "bỉrthday": "Ngày sinh",
             "gender": "Giới tính",
             "btnConfirm": "Xác nhận",
             "btnCancel": "Huỷ",
             "freeBooking": "Miễn phí đặt lịch",
-            "priceBooking": "Giá khám"
+            "priceBooking": "Học phí"
         }
     },
     "admin": {
@@ -97,14 +96,145 @@
             "intro": "Thông tin giới thiệu",
             "add": "Tạo thông tin",
             "save": "Lưu thông tin",
-            "price": "Giá khám bệnh",
+            "price": "Học phí",
             "payment": "Phương thức thanh toán",
             "province": "Tỉnh thành",
-            "nameTeachingCenter": "Tên phòng khám",
-            "addressTeachingCenter": "Địa chỉ phòng khám",
+            "nameTeachingCenter": "Tên trung tâm",
+            "addressTeachingCenter": "Địa chỉ trung tâm",
             "note": "Ghi chú",
             "specialty": "Chọn chuyên ngành",
             "select-teachingCenter": "Chọn trung tâm giảng dạy"
         }
+    },
+    "teaching-center": {
+        "manage-teaching-center": {
+            "title": "Quản lý trung tâm",
+            "name-center": "Tên trung tâm",
+            "img-center": "Ảnh trung tâm",
+            "address-center": "Địa chỉ trung tâm",
+            "save": "Lưu"
+        }
+    },
+    "specialty": {
+        "manage-specialty": {
+            "title": "Quản lý chuyên khoa",
+            "name-specialty": "Tên chuyên khoa",
+            "img-specialty": "Ảnh chuyên khoa",
+            "save": "Lưu"
+        }
+    },
+    "about": {
+        "banner-title": "Chia sẻ kiến thức với thế giới",
+        "company-new": {
+            "line-1": "Tin tức: ",
+            "line-2": "Akademy Rings the Opening Bell in Celebration of its IPO!"
+        },
+        "testimonial": {
+            "title": {
+                "content": "Chúng tôi giúp các tổ chức thuộc mọi loại hình và quy mô chuẩn bị cho con đường phía trước - bất cứ nơi nào nó dẫn đến. Bộ sưu tập các khóa học kinh doanh và kỹ thuật được tuyển chọn của chúng tôi giúp các công ty, chính phủ và tổ chức phi lợi nhuận tiến xa hơn bằng cách đặt việc học vào trung tâm của các chiến lược của họ",
+                "button": "Học thêm"
+            },
+            "content": {
+                "line-1": " Akademy fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.",
+                "line-2": " In total, it was a big success, I would get emails about what a fantastic resource it was.",
+                "line-3": "Akademy responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers."
+            },
+            "author": {
+                "one": {
+                    "name": "Varun Patil",
+                    "position": "Senior Manager of HR Development",
+                    "link": "Read the Synechron case study"
+                },
+                "second": {
+                    "name": "Alfred Helmerich",
+                    "position": "Executive Training Manager",
+                    "link": "Read the NTT DATA case study"
+                },
+                "third": {
+                    "name": "Luz Santillana Romero",
+                    "position": "Development and Engagement Director",
+                    "link": "Read the Indra case study"
+                }
+            },
+            "reach": {
+                "title": {
+                    "title": "Chúng tôi tiếp tục phát triển",
+                    "sub-title": "Cộng đồng toàn cầu và danh mục khóa học của chúng tôi trở nên lớn hơn mỗi ngày. Kiểm tra các số mới nhất của chúng tôi kể từ tháng 12 năm 2021."
+                },
+                "specifition": {
+                    "1": {
+                        "number": "52M+",
+                        "text": "Người học"
+                    },
+                    "2": {
+                        "number": "68K+",
+                        "text": "Người hướng dẫn"
+                    },
+                    "3": {
+                        "number": "196K+",
+                        "text": "Khóa học"
+                    },
+                    "4": {
+                        "number": "712M+",
+                        "text": "Ghi danh khóa học"
+                    },
+                    "5": {
+                        "number": "75",
+                        "text": "Ngôn ngữ"
+                    },
+                    "6": {
+                        "number": "11,600+",
+                        "text": "Khách hàng doanh nghiệp"
+                    }
+                }
+            }
+        }
+    },
+    "footer": {
+        "social": "Theo dõi chúng tôi",
+        "menu-col": {
+            "one": {
+                "1": "Akademy Business",
+                "2": "Dạy trên Akademy",
+                "3": "Tải ứng dụng",
+                "4": "Về chúng tôi",
+                "5": "Nhà đầu tư"
+            },
+            "second": {
+                "1": "Nghề nghiệp",
+                "2": "Blog",
+                "3": "Trợ giúp",
+                "4": "Chi nhánh",
+                "5": "Tuyên bố về khả năng tiếp cận"
+            },
+            "third": {
+                "1": "Điều kiện",
+                "2": "Chính sách bảo mật",
+                "3": "Sơ đồ",
+                "4": "Chủ đề nổi bật"
+            }
+        },
+        "language": "Thay đổi ngôn ngữ"
+    },
+    "confirm": {
+        "title": "Xác nhận lịch học thành công",
+        "email": "Email học sinh",
+        "choose-file": "Chọn file hoá đơn",
+        "send": "Gửi",
+        "cancel": "Huỷ"
+    },
+    "manage-student": {
+        "title": "Quản lý lịch giảng dạy",
+        "choose-schedule": "Chọn lịch giảng dạy",
+        "table": {
+            "col-1": "STT",
+            "col-2": "Thời gian",
+            "col-3": "Họ và tên",
+            "col-4": "Địa chỉ",
+            "col-5": "Giới tính",
+            "col-6": "Thao tác"
+        },
+        "confirm": "Xác nhận",
+        "data": "Không có dữ liệu"
     }
 }

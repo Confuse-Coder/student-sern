@@ -119,9 +119,9 @@ let getListStudentForTeacher = async (req, res) => {
   }
 };
 
-let sendRemedy = async (req, res) => {
+let sendConfirmSchedule = async (req, res) => {
   try {
-    let infor = await teacherService.sendRemedy(req.body);
+    let infor = await teacherService.sendConfirmSchedule(req.body);
     return res.status(200).json(infor);
   } catch (e) {
     console.log(e);
@@ -142,5 +142,5 @@ module.exports = {
   getExtraTeacherById,
   getProfileTeacherById,
   getListStudentForTeacher,
-  sendRemedy,
+  sendConfirmSchedule,
 };

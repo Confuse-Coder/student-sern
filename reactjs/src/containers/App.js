@@ -14,6 +14,10 @@ import System from '../routes/System';
 import CustomScrollbars from '../components/CustomScrollbars';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import HomePage from './HomePage/HomePage';
+import VerifyEmail from './Student/VerifyEmail';
+import DetailSpecialty from './Student/Specialty/DetailSpecialty';
+import DetailTeachingCenter from './Student/TeachingCenter/DetailTeachingCenter';
+import DetailTeacher from './Student/Teacher/DetailTeacher';
 
 class App extends Component {
   handlePersistorState = () => {
@@ -47,6 +51,10 @@ class App extends Component {
                   <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                   <Route path={'/teacher/'} component={userIsAuthenticated(Teacher)} />
                   <Route path={path.HOMEPAGE} component={HomePage} />
+                  <Route path={path.DETAIL_TEACHER} component={DetailTeacher} />
+                  <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
+                  <Route path={path.DETAIL_TEACHING_CENTER} component={DetailTeachingCenter} />
+                  <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
                 </Switch>
               </CustomScrollbars>
             </div>

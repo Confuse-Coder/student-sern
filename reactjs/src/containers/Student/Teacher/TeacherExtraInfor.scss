@@ -1,0 +1,65 @@
+.teacher-extra-infor-container {
+  padding-left: 15px;
+  .content-up {
+    margin-bottom: 10px;
+    .text-address {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #666666;
+    }
+
+    .name-teachingCenter {
+      padding: 5px 0;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .detail-address {
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .content-down {
+    .short-infor {
+      .detail {
+        cursor: pointer;
+        color: #45c3d2;
+      }
+
+      .currency {
+        margin: 0 5px;
+      }
+    }
+
+    .title-price {
+    }
+
+    .detail-infor {
+      padding: 5px;
+      background-color: #f8f8f8;
+      .price {
+        padding-bottom: 5px;
+        .right {
+          float: right;
+        }
+      }
+      .note {
+      }
+    }
+
+    .payment {
+      padding: 5px;
+      background-color: #eee;
+    }
+
+    .hide-price {
+      margin-top: 10px;
+
+      span {
+        cursor: pointer;
+        color: #45c3d2;
+      }
+    }
+  }
+}

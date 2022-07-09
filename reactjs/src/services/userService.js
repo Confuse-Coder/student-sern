@@ -98,8 +98,8 @@ const getAllStudentForTeacher = (data) => {
   );
 };
 
-const postSendRemedy = (data) => {
-  return axios.post(`/api/send-remedy`, data);
+const postSendConfirmSchedule = (data) => {
+  return axios.post(`/api/send-confirm-schedule`, data);
 };
 
 export {
@@ -127,5 +127,5 @@ export {
   createNewTeachingCenter,
   getDetailTeachingCenterById,
   getAllStudentForTeacher,
-  postSendRemedy,
+  postSendConfirmSchedule,
 };

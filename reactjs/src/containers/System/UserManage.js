@@ -20,7 +20,7 @@ class UserManage extends Component {
       arrUsers: [],
       currentPage: 1,
       totalPages: 0,
-      currentLimit: 5,
+      currentLimit: 3,
       isOpenModalUser: false,
       isOpenModalEditUser: false,
       userEdit: {},

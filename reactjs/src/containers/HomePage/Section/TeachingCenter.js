@@ -36,8 +36,9 @@ class TeachingCenter extends Component {
       <div className="section-share section-teaching-center">
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section">Cơ sở y tế nổi bật</span>
-            <button className="btn-section">Xem thêm</button>
+            <span className="title-section">
+              <FormattedMessage id="homepage.out-standing-teaching-center" />
+            </span>
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
